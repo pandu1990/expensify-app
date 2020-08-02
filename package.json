@@ -1,0 +1,50 @@
+{
+  "name": "expensify-app",
+  "version": "1.0.0",
+  "description": "Expensify App",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "webpack",
+    "serve:dev": "webpack-dev-server",
+    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/pandu1990/expensify-app",
+  "keywords": [],
+  "author": "Pandurang Kamath",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "html-webpack-plugin": "^4.3.0",
+    "live-server": "^1.2.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2"
+  }
+}
