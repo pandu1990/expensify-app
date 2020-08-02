@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Indecision App',
+      title: 'Expensify App',
       template: './src/template/index.html',
       favicon: './src/template/favicon.png'
     })
