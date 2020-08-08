@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './playground/redux-101.js',
+  entry: './playground/redux-expensify.js',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
