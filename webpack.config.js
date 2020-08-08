@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './playground/higher-order-component.js',
+  entry: './src/app.js',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
@@ -15,4 +16,10 @@ store.dispatch(setTextFilter('bill'));
 const { expenses, filters } = store.getState();
 console.log(getVisibleExpenses(expenses, filters));
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+ReactDOM.render((
+  <Provider store={store}>
+    <AppRouter/>
+  </Provider>
+),
+document.getElementById('app')
+);
