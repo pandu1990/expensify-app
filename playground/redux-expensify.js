@@ -61,6 +61,22 @@ const setTextFilter = (text = '') => ({
   text
 });
 
+const setSortBy = (sortBy) => ({
+  type: 'SET_SORT_BY',
+  sortBy
+});
+const setSortByAmount = () => setSortBy('amount');
+const setSortByDate = () => setSortBy('date');
+
+const setStartDate = (startDate) => ({
+  type: 'SET_START_DATE',
+  startDate
+});
+const setEndDate = (endDate) => ({
+  type: 'SET_END_DATE',
+  endDate
+});
+
 const filtersReducerDefaultState = {
   text: '',
   sortBy: 'date',
@@ -73,6 +89,21 @@ const filtersReducers = (state = filtersReducerDefaultState, action) => {
       return {
         ...state,
         text: action.text
+      };
+    case 'SET_SORT_BY':
+      return {
+        ...state,
+        sortBy: action.sortBy
+      };
+    case 'SET_START_DATE':
+      return {
+        ...state,
+        startDate: action.startDate
+      };
+    case 'SET_END_DATE':
+      return {
+        ...state,
+        endDate: action.endDate
       };
     default:
       return state;
@@ -96,3 +127,11 @@ store.dispatch(editExpense(coffeeId, { amount: 5 }));
 
 store.dispatch(setTextFilter('rent'));
 store.dispatch(setTextFilter());
+
+store.dispatch(setSortByAmount());
+store.dispatch(setSortByDate());
+
+store.dispatch(setStartDate(1000));
+store.dispatch(setEndDate(2000));
+store.dispatch(setStartDate());
+store.dispatch(setEndDate());
