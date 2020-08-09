@@ -42,8 +42,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "moment": "^2.27.0",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
+    "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",
