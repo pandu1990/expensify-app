@@ -6,7 +6,7 @@ const filtersReducerDefaultState = {
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month')
 };
-const filtersReducers = (state = filtersReducerDefaultState, action) => {
+const filtersReducer = (state = filtersReducerDefaultState, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
       return {
@@ -32,4 +32,4 @@ const filtersReducers = (state = filtersReducerDefaultState, action) => {
       return state;
   }
 };
-export default filtersReducers;
+export default filtersReducer;
