@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'standard',
+    'plugin:jest/recommended'
   ],
   parser: 'babel-eslint',
   parserOptions: {
@@ -17,7 +18,8 @@ module.exports = {
   },
   plugins: [
     'react',
-    'babel'
+    'babel',
+    'jest'
   ],
   settings: {
     react: {
