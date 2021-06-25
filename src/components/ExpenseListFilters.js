@@ -3,32 +3,33 @@ import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 import { setTextFilter, setSortBy, setStartDate, setEndDate } from '../actions/filters';
 
-class ExpenseListFilters extends React.Component {
+export class ExpenseListFilters extends React.Component {
   state = {
     calendarFocused: null
   };
 
   onDatesChange = ({ startDate, endDate }) => {
-    this.props.dispatch(setStartDate(startDate));
-    this.props.dispatch(setEndDate(endDate));
+    this.props.setStartDate(startDate);
+    this.props.setEndDate(endDate);
   };
 
-  onFocusChange = focusedInput => this.setState({ calendarFocused: focusedInput });
+  onFocusChange = (focusedInput) => this.setState({ calendarFocused: focusedInput });
+
+  onTextChange = (e) => this.props.setTextFilter(e.target.value);
+
+  onSortChange = (e) => this.props.setSortBy(e.target.value);
 
   render () {
     return (
       <div>
         <input
           type="text"
-          value={this.props.filters.text} onChange={(e) => {
-            this.props.dispatch(setTextFilter(e.target.value));
-          }}
+          value={this.props.filters.text}
+          onChange={this.onTextChange}
         />
         <select
           value={this.props.filters.sortBy}
-          onChange={(e) => {
-            this.props.dispatch(setSortBy(e.target.value));
-          }}
+          onChange={this.onSortChange}
         >
           <option value="createdAt">Date</option>
           <option value="amount">Amount</option>
@@ -54,4 +55,11 @@ const mapStateToProps = (state) => ({
   filters: state.filters
 });
 
-export default connect(mapStateToProps)(ExpenseListFilters);
+const mapDispatchToProps = (dispatch) => ({
+  setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+  setEndDate: (endDate) => dispatch(setEndDate(endDate)),
+  setTextFilter: (text) => dispatch(setTextFilter(text)),
+  setSortBy: (sortBy) => dispatch(setSortBy(sortBy))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);
