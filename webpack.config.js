@@ -59,6 +59,11 @@ module.exports = () => {
           'css-loader',
           'sass-loader'
         ]
+      }, {
+        test: /\.jpg$/,
+        use: [
+          'file-loader'
+        ]
       }]
     },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',

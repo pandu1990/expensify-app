@@ -11,6 +11,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import { firebase } from './firebase/firebase';
 import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
+import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
 
@@ -29,7 +30,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, app);
+ReactDOM.render(<LoadingPage />, app);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
