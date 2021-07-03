@@ -11,7 +11,8 @@
 }
 
 .button--login {
-  background: url('../images/btn_google_signin.png');
+  background: url('../images/btn_google_signin_dark.png');
+  background-size: contain;
   width: 191px;
   height: 46px;
 }
