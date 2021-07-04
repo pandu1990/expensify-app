@@ -27,6 +27,5 @@ test('should handle edit expense', () => {
 
 test('should handle remove expense', () => {
   wrapper.find('button').simulate('click');
-  expect(historySpy.push).toHaveBeenLastCalledWith('/');
-  expect(startRemoveExpenseSpy).toHaveBeenLastCalledWith({ id: expense.id });
+  expect(wrapper.state('showModal')).toBe(true);
 });

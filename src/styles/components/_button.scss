@@ -22,5 +22,9 @@
 }
 
 .button--secondary {
-  background: $light-gray;
+  background: $red;
+}
+
+.button--modal {
+  padding: $s-size $l-size;
 }
