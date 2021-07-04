@@ -39,31 +39,26 @@ module.exports = () => {
       publicPath: '/'
     },
     module: {
-      rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react'
-            ]
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
           }
+        },
+        {
+          test: /\.s?css$/,
+          use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'sass-loader']
+        },
+        {
+          test: /\.(jpg|png)$/,
+          use: ['file-loader']
         }
-      }, {
-        test: /\.s?css$/,
-        use: [
-          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      }, {
-        test: /\.(jpg|png)$/,
-        use: [
-          'file-loader'
-        ]
-      }]
+      ]
     },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
     devServer: {

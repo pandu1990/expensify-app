@@ -69,12 +69,7 @@ test('should call onSubmit prop for valid form submission', () => {
     preventDefault: () => {}
   });
   expect(wrapper.state('error')).toBeUndefined();
-  const {
-    description,
-    amount,
-    createdAt,
-    note
-  } = expenses[0];
+  const { description, amount, createdAt, note } = expenses[0];
   expect(onSubmitSpy).toHaveBeenLastCalledWith({
     description,
     amount,

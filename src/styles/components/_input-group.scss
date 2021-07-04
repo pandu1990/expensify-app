@@ -1,8 +1,7 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: $m-size;
-
+  margin-bottom: $s-size;
   @media (min-width: $desktop-breakpoint) {
     flex-direction: row;
     margin-bottom: $l-size;
@@ -10,7 +9,12 @@
 }
 
 .input-group__item {
+  display: flex;
+  flex-direction: column;
   margin-bottom: $s-size;
+  label {
+    font-style: italic;
+  }
   @media (min-width: $desktop-breakpoint) {
     margin: 0 $s-size 0 0;
   }

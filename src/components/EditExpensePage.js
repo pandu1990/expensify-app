@@ -14,7 +14,7 @@ export class EditExpensePage extends React.Component {
     this.props.history.push('/');
   };
 
-  render () {
+  render() {
     return (
       <div>
         <div className="page-header">
@@ -23,14 +23,8 @@ export class EditExpensePage extends React.Component {
           </div>
         </div>
         <div className="content-container">
-          <ExpenseForm
-            expense={this.props.expense}
-            onSubmit={this.onSubmit}
-          />
-          <button
-            className="button button--secondary"
-            onClick={this.onRemove}
-          >
+          <ExpenseForm expense={this.props.expense} onSubmit={this.onSubmit} />
+          <button className="button button--secondary" onClick={this.onRemove}>
             Remove Expense
           </button>
         </div>

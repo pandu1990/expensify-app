@@ -13,13 +13,7 @@ beforeEach(() => {
   setStartDate = jest.fn();
   setEndDate = jest.fn();
   wrapper = shallow(
-    <ExpenseListFilters
-      filters={filters}
-      setTextFilter={setTextFilter}
-      setSortBy={setSortBy}
-      setStartDate={setStartDate}
-      setEndDate={setEndDate}
-    />
+    <ExpenseListFilters filters={filters} setTextFilter={setTextFilter} setSortBy={setSortBy} setStartDate={setStartDate} setEndDate={setEndDate} />
   );
 });
 

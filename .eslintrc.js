@@ -4,11 +4,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard',
-    'plugin:jest/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'plugin:jest/recommended'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,11 +13,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module'
   },
-  plugins: [
-    'react',
-    'babel',
-    'jest'
-  ],
+  plugins: ['react', 'babel', 'jest'],
   settings: {
     react: {
       version: 'detect'
@@ -29,6 +21,7 @@ module.exports = {
   },
   rules: {
     semi: ['error', 'always'],
+    'space-before-function-paren': 0,
     'react/prop-types': 0
   }
 };
