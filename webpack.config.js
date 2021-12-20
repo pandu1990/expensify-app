@@ -62,7 +62,9 @@ module.exports = () => {
     },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
     devServer: {
-      contentBase: path.join(__dirname, 'public'),
+      static: {
+        directory: path.join(__dirname, 'public')
+      },
       historyApiFallback: true
     }
   };
