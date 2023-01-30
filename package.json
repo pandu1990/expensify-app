@@ -58,7 +58,7 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "firebase": "^8.6.8",
     "history": "^4.10.1",
     "moment": "^2.29.4",
